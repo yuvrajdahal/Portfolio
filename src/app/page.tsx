@@ -15,7 +15,7 @@ import {
 import { ProjectSection } from "./components/project-section";
 
 export default function Home() {
-  const [sectionIndex, setSectionIndex] = useState<number>(2);
+  const [sectionIndex, setSectionIndex] = useState<number>(1);
   const [prevSectionIndex, setPrevSectionIndex] = useState<number>(0);
 
   function handleSectionChange(index: number) {
