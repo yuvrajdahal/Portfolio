@@ -7,14 +7,10 @@ import { MenuBar, MenuBarProps } from "./menu-bar";
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-export const AboutSection: React.FC<MenuBarProps> = ({
-  handleSectionChange,
-  sectionIndex,
-}) => {
- 
+export const AboutSection = ({}) => {
   return (
     <>
-      <section className="h-full relative flex flex-col items-center ">
+      <section className="h-full duration-300 transition  relative flex flex-col items-center ">
         <div className="absolute -left-[4rem] flex items-center relative justify-center">
           <div className="overflow-hidden relative left-[10rem] h-[200px] w-[300px] z-[50] bg-gray-200 rounded-md">
             <Image
@@ -26,7 +22,13 @@ export const AboutSection: React.FC<MenuBarProps> = ({
             />
           </div>
           <div className="overflow-hidden relative left-[5rem] h-[350px] w-[300px] bg-gray-600 rounded-md z-[100]">
-            <Image src={"/scene-2.jpg"} className="transition	hover:scale-110" height={350} width={250} alt="yuvraj" />
+            <Image
+              src={"/scene-2.jpg"}
+              className="transition	hover:scale-110"
+              height={350}
+              width={250}
+              alt="yuvraj"
+            />
           </div>
           <div className="overflow-hidden h-[400px] w-[300px] bg-gray-200 rounded-md z-[200]">
             <Image
@@ -49,7 +51,9 @@ export const AboutSection: React.FC<MenuBarProps> = ({
         </div>
         <div className="w-[70%] pb-6">
           <div className="flex flex-col justify-center mt-12 ">
-            <h2 className={twMerge(caesar.className, "text-4xl light-gradient")}>
+            <h2
+              className={twMerge(caesar.className, "text-4xl light-gradient")}
+            >
               Hello There, I'm Yuvraj.
             </h2>
             <p
@@ -89,10 +93,6 @@ export const AboutSection: React.FC<MenuBarProps> = ({
           </div>
         </div>
       </section>
-      <MenuBar
-        sectionIndex={sectionIndex}
-        handleSectionChange={handleSectionChange}
-      />
     </>
   );
 };

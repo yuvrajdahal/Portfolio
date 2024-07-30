@@ -7,23 +7,24 @@ import {
 } from "@/components/Icons/icons";
 import React, { useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
+import { motion } from "framer-motion";
+import useSectionHandler from "@/appstate/section";
 
 export interface MenuBarProps {
-  sectionIndex: number;
-  handleSectionChange: (index: number) => void;
   ref?: any;
   status?: boolean;
 }
-export const MenuBar: React.FC<MenuBarProps> = ({
-  handleSectionChange,
-  sectionIndex,
-  ref,
-  status = true,
-}) => {
-  const [menuBarVisible, setMenuBarVisible] = useState(true);
-
+export const MenuBar: React.FC<MenuBarProps> = ({ ref, status = true }) => {
+  const [menuBarVisible, setMenuBarVisible] = useState(false);
+  const { sectionIndex, setSectionIndex } = useSectionHandler();
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [startCssAnimation, setStartCssAnimation] = useState(false);
+  const [prevSectionIndex, setPrevSectionIndex] = useState<number>(0);
 
+  function handleSectionChange(index: number) {
+    setPrevSectionIndex(sectionIndex);
+    setSectionIndex(index);
+  }
   const handleScroll = () => {
     const currentScrollY = window.scrollY;
     if (currentScrollY > lastScrollY) {
@@ -33,7 +34,15 @@ export const MenuBar: React.FC<MenuBarProps> = ({
     }
     setLastScrollY(currentScrollY);
   };
-
+  useEffect(() => {
+    setMenuBarVisible(true);
+    const interval = setInterval(() => {
+      setStartCssAnimation(true);
+    }, 1000);
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
@@ -41,19 +50,27 @@ export const MenuBar: React.FC<MenuBarProps> = ({
     };
   }, [lastScrollY]);
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{
+        opacity: 1,
+        // transform: menuBarVisible ? "translateY(0px)" : "translateY(100px)",
+        transition: { delay: 0.6, duration: 0.5 },
+      }}
       className={twMerge(
         "fixed bottom-8 transition duration-300	 border px-4 py-2 shadow-lg rounded-full bg-white flex gap-6 items-center",
-        menuBarVisible
-          ? "opacity-100 translate-y-0 pointer-events-auto"
-          : "opacity-0 -translate-y-4",
-        "transition animate-[fadeUp_0.6s]"
+        startCssAnimation
+          ? menuBarVisible
+            ? "!opacity-100 pointer-events-auto"
+            : "!opacity-0 "
+          : ""
       )}
     >
       <HomeIcon onClick={() => handleSectionChange(0)} />
       <AboutIcon onClick={() => handleSectionChange(1)} />
-      <SkillsIcon onClick={() => handleSectionChange(2)}/>
+      <SkillsIcon onClick={() => handleSectionChange(2)} />
+
       <ContactIcon />
-    </div>
+    </motion.div>
   );
 };

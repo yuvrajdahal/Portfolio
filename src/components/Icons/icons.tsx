@@ -95,7 +95,7 @@ export const ClappingHandsSvg: React.FC<SvgProps> = ({
           y2="11.9121"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#666666" />
+          <stop stopColor="#666666" />
           <stop offset="1" />
         </linearGradient>
         <linearGradient
@@ -106,7 +106,7 @@ export const ClappingHandsSvg: React.FC<SvgProps> = ({
           y2="11.8967"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#666666" />
+          <stop stopColor="#666666" />
           <stop offset="1" />
         </linearGradient>
         <linearGradient
@@ -117,7 +117,7 @@ export const ClappingHandsSvg: React.FC<SvgProps> = ({
           y2="27.0042"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#666666" />
+          <stop stopColor="#666666" />
           <stop offset="1" />
         </linearGradient>
         <linearGradient
@@ -128,7 +128,7 @@ export const ClappingHandsSvg: React.FC<SvgProps> = ({
           y2="22.8921"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#666666" />
+          <stop stopColor="#666666" />
           <stop offset="1" />
         </linearGradient>
         <linearGradient
@@ -139,7 +139,7 @@ export const ClappingHandsSvg: React.FC<SvgProps> = ({
           y2="89.0377"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#666666" />
+          <stop stopColor="#666666" />
           <stop offset="1" />
         </linearGradient>
         <linearGradient
@@ -150,7 +150,7 @@ export const ClappingHandsSvg: React.FC<SvgProps> = ({
           y2="89.5441"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#666666" />
+          <stop stopColor="#666666" />
           <stop offset="1" />
         </linearGradient>
         <linearGradient
@@ -161,7 +161,7 @@ export const ClappingHandsSvg: React.FC<SvgProps> = ({
           y2="109.371"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#666666" />
+          <stop stopColor="#666666" />
           <stop offset="1" />
         </linearGradient>
         <linearGradient
@@ -172,7 +172,7 @@ export const ClappingHandsSvg: React.FC<SvgProps> = ({
           y2="109.745"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#666666" />
+          <stop stopColor="#666666" />
           <stop offset="1" />
         </linearGradient>
       </defs>
@@ -239,7 +239,7 @@ export const SkillsIcon: React.FC<SvgProps> = ({ ...props }) => {
           y2="18.9705"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#666666" />
+          <stop stopColor="#666666" />
           <stop offset="1" />
         </linearGradient>
       </defs>

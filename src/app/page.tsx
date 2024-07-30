@@ -1,6 +1,6 @@
 "use client";
 import { NavBar } from "./components/navbar";
-import {  HomeSection } from "./components/home-section";
+import { HomeSection } from "./components/home-section";
 import { MenuBar, MenuBarProps } from "./components/menu-bar";
 import { AboutSection } from "./components/about-section";
 import { AnimatePresence, motion } from "framer-motion";
@@ -13,18 +13,13 @@ import {
   SocialHandleBar,
 } from "@/components/Icons/icons";
 import { ProjectSection } from "./components/project-section";
+import useSectionHandler from "@/appstate/section";
 
 export default function Home() {
-  const [sectionIndex, setSectionIndex] = useState<number>(0);
-  const [prevSectionIndex, setPrevSectionIndex] = useState<number>(0);
-
-  function handleSectionChange(index: number) {
-    setPrevSectionIndex(sectionIndex);
-    setSectionIndex(index);
-  }
+  const { sectionIndex } = useSectionHandler();
 
   const SectionHandler: {
-    [key: number]: React.FC<MenuBarProps>;
+    [key: number]: React.FC;
   } = {
     0: HomeSection,
     1: AboutSection,
@@ -41,10 +36,7 @@ export default function Home() {
       <AnimatePresence>
         <NavBar />
         <div className="h-full 4xl:h-[80%] w-full flex flex-col items-center">
-          <SectionComponent
-            handleSectionChange={handleSectionChange}
-            sectionIndex={sectionIndex}
-          />
+          <SectionComponent />
         </div>
       </AnimatePresence>
     </main>
