@@ -123,12 +123,7 @@ export const ProjectSection = ({}) => {
             </button>
           </div>
           <div className="h-full w-[50%] bg-[url(/necare.png)] bg-no-repeat bg-contain bg-center bg-cover"></div>
-          {/* <div className="w-full p-4  overflow-hidden rounded-md">
-              <img
-                src="/bolumna.png"
-                className="w-full object-contain rounded-md"
-              />
-            </div> */}
+        
         </div>
         <div className="min-h-[69vh] w-[90%] rounded-lg bg-slate-100/80 mt-6 transition duration-300 hover:shadow-xl border border-1 hover:scale-105 hover:bg-white flex justify-between overflow-hidden">
           <div className="w-[50%] pl-6  pt-10">
