@@ -14,7 +14,7 @@ export const ProjectSection = ({}) => {
         className={twMerge(caesar.className, "text-3xl light-gradient mb-6")}
       ></h2>
       <section className="h-full w-full gap-[100px] relative flex flex-col items-center ">
-        <div className="min-h-[69vh] w-[90%] rounded-lg bg-gray-100 mt-6 transition duration-300 hover:shadow-xl border border-1 hover:scale-105 hover:bg-white flex justify-between overflow-hidden">
+        <div className="min-h-[69vh] w-[90%] rounded-lg bg-slate-100/80 mt-6 transition duration-300 hover:shadow-xl border border-1 hover:scale-105 hover:bg-white flex justify-between overflow-hidden">
           <div className="w-[50%] pl-6  pt-10">
             <h2
               className={twMerge(
@@ -73,7 +73,7 @@ export const ProjectSection = ({}) => {
               />
             </div> */}
         </div>
-        <div className="min-h-[69vh] w-[90%] rounded-lg bg-gray-100 mt-6 transition duration-300 hover:shadow-xl border border-1 hover:scale-105 hover:bg-white flex flex-row-reverse justify-between overflow-hidden">
+        <div className="min-h-[69vh] w-[90%] rounded-lg bg-slate-100/80 mt-6 transition duration-300 hover:shadow-xl border border-1 hover:scale-105 hover:bg-white flex flex-row-reverse justify-between overflow-hidden">
           <div className="w-[50%] pl-6  pt-10">
             <h2
               className={twMerge(
@@ -90,7 +90,6 @@ export const ProjectSection = ({}) => {
               )}
             >
               <span className="text-sky-500">React.js</span>|
-              <span className="text-[#51AD3A]">Node.js</span>|
               <span className="text-blue-500">Tailwind Css</span>
             </p>
             <p
@@ -131,7 +130,7 @@ export const ProjectSection = ({}) => {
               />
             </div> */}
         </div>
-        <div className="min-h-[69vh] w-[90%] rounded-lg bg-gray-100 mt-6 transition duration-300 hover:shadow-xl border border-1 hover:scale-105 hover:bg-white flex justify-between overflow-hidden">
+        <div className="min-h-[69vh] w-[90%] rounded-lg bg-slate-100/80 mt-6 transition duration-300 hover:shadow-xl border border-1 hover:scale-105 hover:bg-white flex justify-between overflow-hidden">
           <div className="w-[50%] pl-6  pt-10">
             <h2
               className={twMerge(
@@ -148,7 +147,6 @@ export const ProjectSection = ({}) => {
               )}
             >
               <span className="text-sky-500">React.js</span>|
-              <span className="text-[#51AD3A]">Node.js</span>|
               <span className="text-blue-500">Tailwind Css</span>
             </p>
             <p
