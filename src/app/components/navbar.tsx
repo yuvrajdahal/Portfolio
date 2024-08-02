@@ -10,7 +10,7 @@ export const NavBar = () => {
     <motion.nav
       initial={{ opacity: 0, y: -100 }}
       animate={{ opacity: 1, y: 0, transition: {duration: 0.5 } }}
-      className="w-full ] flex justify-between bg-transparent items-center z-[1000]"
+      className="w-full  flex justify-between bg-transparent items-center z-[1000]"
     >
       <h2 className={twMerge(irish.className, "text-5xl light-gradient")}>
         UV

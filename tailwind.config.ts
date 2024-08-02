@@ -17,7 +17,9 @@ const config: Config = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        bolumna: "bg-[url('/bolumna.png')] bg-no-repeat bg-cover",
       },
+      // you can use bolumna by calling like by syntaxt bolumna
       screens: {
         "4xl": "1600px",
       },
@@ -30,14 +32,14 @@ const config: Config = {
           "0%": { opacity: "1" },
           "100%": { opacity: "0" },
         },
-        fadeUp:{
+        fadeUp: {
           "0%": { opacity: "0", transform: "translateY(100%)" },
           "100%": { opacity: "1", transform: "translateY(0%)" },
         },
-        fadeDown:{
+        fadeDown: {
           "0%": { opacity: "0", transform: "translateY(-100%)" },
           "100%": { opacity: "1", transform: "translateY(0%)" },
-        }
+        },
       },
       animation: {
         fadeIn: "fadeIn  ease-in-out",
