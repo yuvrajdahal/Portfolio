@@ -5,21 +5,31 @@ import Image from "next/image";
 import { twMerge } from "tailwind-merge";
 import { MenuBar, MenuBarProps } from "./menu-bar";
 import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { m, motion } from "framer-motion";
+import useStore from "@/appstate/theme";
 
 export const ProjectSection = ({}) => {
+  const { theme } = useStore();
   return (
     <>
       <h2
         className={twMerge(caesar.className, "text-3xl light-gradient mb-6")}
       ></h2>
       <section className="h-full w-full gap-[100px] relative flex flex-col items-center ">
-        <div className="min-h-[69vh] w-[90%] rounded-lg bg-slate-100/80 mt-6 transition duration-300 hover:shadow-xl border border-1 hover:scale-105 hover:bg-white flex justify-between overflow-hidden">
+        <div
+          className={twMerge(
+            "min-h-[69vh] w-[90%] rounded-lg  mt-6 transition duration-300 hover:shadow-xl border border-1 hover:scale-105 hover:bg-white flex justify-between overflow-hidden",
+            theme === "dark"
+              ? "bg-dark-t hover:bg-[#051B35] border border-white/20"
+              : "bg-slate-100/80 hover:bg-white border border-black/10"
+          )}
+        >
           <div className="w-[50%] pl-6  pt-10">
             <h2
               className={twMerge(
                 caesar.className,
-                "text-5xl font-bold light-gradient"
+                "text-5xl font-bold light-gradient",
+                theme === "dark" ? "dark-gradient" : "light-gradient"
               )}
             >
               01 Bolumna Chat App
@@ -27,17 +37,19 @@ export const ProjectSection = ({}) => {
             <p
               className={twMerge(
                 lato.className,
-                "mt-10 text-lg font-normal flex gap-2"
+                "mt-10 text-lg font-normal flex gap-2",
+                theme === "dark" ? "text-white" : "text-black"
               )}
             >
-              <span className="text-sky-500">React.js</span>|
-              <span className="text-[#51AD3A]">Node.js</span>|
-              <span className="text-blue-500">Tailwind Css</span>
+              <span className={"text-sky-500"}>React.js</span>|
+              <span className={"text-[#51AD3A]"}>Node.js</span>|
+              <span className={"text-blue-500"}>Tailwind Css</span>
             </p>
             <p
               className={twMerge(
                 lato.className,
-                "mt-2 text-normal text-left font-normal pr-4"
+                "mt-2 text-normal text-left font-normal pr-4",
+                theme === "dark" ? "text-white/70" : "text-black"
               )}
             >
               Bolumna is a cutting-edge React chat application powered by
@@ -73,12 +85,20 @@ export const ProjectSection = ({}) => {
               />
             </div> */}
         </div>
-        <div className="min-h-[69vh] w-[90%] rounded-lg bg-slate-100/80 mt-6 transition duration-300 hover:shadow-xl border border-1 hover:scale-105 hover:bg-white flex flex-row-reverse justify-between overflow-hidden">
+        <div
+          className={twMerge(
+            "min-h-[69vh] w-[90%] rounded-lg  mt-6 transition duration-300 hover:shadow-xl border border-1 hover:scale-105 hover:bg-white flex justify-between overflow-hidden flex-row-reverse",
+            theme === "dark"
+              ? "bg-dark-t hover:bg-[#051B35] border border-white/20"
+              : "bg-slate-100/80 hover:bg-white border border-black/10"
+          )}
+        >
           <div className="w-[50%] pl-6  pt-10">
             <h2
               className={twMerge(
                 caesar.className,
-                "text-5xl font-bold light-gradient"
+                "text-5xl font-bold light-gradient",
+                theme === "dark" ? "dark-gradient" : "light-gradient"
               )}
             >
               02 Necare
@@ -86,16 +106,18 @@ export const ProjectSection = ({}) => {
             <p
               className={twMerge(
                 lato.className,
-                "mt-10 text-lg font-normal flex gap-2"
+                "mt-10 text-lg font-normal flex gap-2 ",
+                theme === "dark" ? "text-white" : "text-black"
               )}
             >
-              <span className="text-sky-500">React.js</span>|
-              <span className="text-blue-500">Tailwind Css</span>
+              <span className={"text-sky-500"}>React.js</span>|
+              <span className={"text-blue-500"}>Tailwind Css</span>
             </p>
             <p
               className={twMerge(
                 lato.className,
-                "mt-2 text-normal text-left font-normal pr-4"
+                "mt-2 text-normal text-left font-normal pr-4",
+                theme === "dark" ? "text-white/70" : "text-black"
               )}
             >
               Necare is one of the best care providers who continuously focuses
@@ -107,7 +129,7 @@ export const ProjectSection = ({}) => {
               their participants and is dedicated to making a positive impact on
               their lives and are a trusted and reliable care provider .
             </p>
-            <button className="mt-4 font-semibold border bg-white  px-6 py-2 rounded-md flex flex-row-reverse items-center gap-4">
+            <button className="mt-4 font-semibold border bg-white/60  px-6 py-2 rounded-md flex flex-row-reverse items-center gap-4">
               Visit Website
               <svg
                 className="size-5 rotate-180"
@@ -123,14 +145,21 @@ export const ProjectSection = ({}) => {
             </button>
           </div>
           <div className="h-full w-[50%] bg-[url(/necare.png)] bg-no-repeat bg-contain bg-center bg-cover"></div>
-        
         </div>
-        <div className="min-h-[69vh] w-[90%] rounded-lg bg-slate-100/80 mt-6 transition duration-300 hover:shadow-xl border border-1 hover:scale-105 hover:bg-white flex justify-between overflow-hidden">
+        <div
+          className={twMerge(
+            "min-h-[69vh] w-[90%] rounded-lg  mt-6 transition duration-300 hover:shadow-xl border border-1 hover:scale-105 hover:bg-white flex justify-between overflow-hidden",
+            theme === "dark"
+              ? "bg-dark-t hover:bg-[#051B35] border border-white/20"
+              : "bg-slate-100/80 hover:bg-white border border-black/10"
+          )}
+        >
           <div className="w-[50%] pl-6  pt-10">
             <h2
               className={twMerge(
                 caesar.className,
-                "text-5xl font-bold light-gradient"
+                "text-5xl font-bold light-gradient",
+                theme === "dark" ? "dark-gradient" : "light-gradient"
               )}
             >
               03 CHITRA AI
@@ -138,7 +167,8 @@ export const ProjectSection = ({}) => {
             <p
               className={twMerge(
                 lato.className,
-                "mt-10 text-lg font-normal flex gap-2"
+                "mt-10 text-lg font-normal flex gap-2 ",
+                theme === "dark" ? "text-white" : "text-black"
               )}
             >
               <span className="text-sky-500">React.js</span>|
@@ -147,7 +177,8 @@ export const ProjectSection = ({}) => {
             <p
               className={twMerge(
                 lato.className,
-                "mt-2 text-normal text-left font-normal pr-4"
+                "mt-2 text-normal text-left font-normal pr-4",
+                theme === "dark" ? "text-white/70" : "text-black"
               )}
             >
               Chitra AI is a state-of-the-art React chat application powered by

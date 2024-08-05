@@ -6,8 +6,10 @@ import { twMerge } from "tailwind-merge";
 import { MenuBar, MenuBarProps } from "./menu-bar";
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import useStore from "@/appstate/theme";
 
 export const AboutSection = ({}) => {
+  const { theme } = useStore();
   return (
     <>
       <section className="h-full duration-300 transition  relative flex flex-col items-center ">
@@ -75,7 +77,11 @@ export const AboutSection = ({}) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.4, delay: 0.1 }}
-              className={twMerge(caesar.className, "text-4xl light-gradient")}
+              className={twMerge(
+                caesar.className,
+                "text-4xl light-gradient",
+                theme === "dark" ? "dark-gradient" : "light-gradient"
+              )}
             >
               Hello There, I'm Yuvraj.
             </motion.h2>
@@ -85,7 +91,8 @@ export const AboutSection = ({}) => {
               transition={{ duration: 0.4, delay: 0.2 }}
               className={twMerge(
                 lato.className,
-                "text-justify text-balance mt-4 text-lg 4xl:text-2xl"
+                "text-justify text-balance mt-4 text-lg 4xl:text-2xl",
+                theme === "dark" ? "text-white" : "text-black"
               )}
             >
               Yuvraj Dahal, a prominent figure in the realm of technology and

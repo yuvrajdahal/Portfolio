@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { MenuBar } from "./components/menu-bar";
+import Layout from "./components/layout";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,11 +19,13 @@ export default function RootLayout({
   return (
     <html lang="en light">
       <body>
-        {children}
+        <Layout>
+          {children}
 
-        <div className="w-full relative flex flex-col items-center">
-          <MenuBar />
-        </div>
+          <div className="w-full relative flex flex-col items-center">
+            <MenuBar />
+          </div>
+        </Layout>
       </body>
     </html>
   );

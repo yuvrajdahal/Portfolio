@@ -14,6 +14,7 @@ import {
 } from "@/components/Icons/icons";
 import { ProjectSection } from "./components/project-section";
 import useSectionHandler from "@/appstate/section";
+import useStore from "@/appstate/theme";
 
 export default function Home() {
   const { sectionIndex } = useSectionHandler();
@@ -30,7 +31,7 @@ export default function Home() {
   return (
     <main
       className={twMerge(
-        " flex h-screen flex-col container mx-auto  relative items-center  px-10 pt-6 transition-colors"
+        "flex h-screen flex-col container mx-auto  relative items-center  px-10 pt-6",
       )}
     >
       <AnimatePresence>

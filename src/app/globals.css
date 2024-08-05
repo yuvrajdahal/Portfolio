@@ -22,12 +22,18 @@
   .bg-light-gradient {
     @apply bg-gradient-to-r from-light-t-gray to-black;
   }
+  .dark-gradient {
+    @apply bg-gradient-to-r from-dark-t-gray to-white bg-clip-text text-transparent;
+  }
+  .bg-dark-gradient {
+    @apply bg-gradient-to-r from-dark-t-gray to-black;
+  }
 }
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
 }
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   display: none;
 }

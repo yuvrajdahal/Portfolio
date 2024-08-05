@@ -1,7 +1,12 @@
+"use client";
 import {
   ClappingHandsSvg,
+  DarkClappingHandsSvg,
   FaceBookIcon,
+  FaceBookIconDark,
+  GithubDark,
   GithubIcon,
+  InstaDark,
   InstagramIcon,
 } from "@/components/Icons/icons";
 import { caesar, lato } from "@/global/fonts";
@@ -9,27 +14,34 @@ import React from "react";
 import { twMerge } from "tailwind-merge";
 import { MenuBar, MenuBarProps } from "./menu-bar";
 import { motion } from "framer-motion";
+import useStore from "@/appstate/theme";
 
 export const HomeSection: React.FC = ({}) => {
+  const { theme } = useStore();
   return (
     <>
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1, transition: { delay: 0.4, duration: 0.5 } }}
+        animate={{ opacity: 1, transition: { delay: 0.3, duration: 0.5 } }}
         className="h-full  mt-2 flex flex-col 4xl:justify-center items-center "
       >
         <motion.div
         // initial={{ opacity: 0 }}
         // animate={{ opacity: 1, transition: { delay: 0.2, duration: 0.5 } }}
         >
-          <ClappingHandsSvg className="4xl:h-[18rem] 4xl:w-[18rem]" />
+          {theme === "dark" ? (
+            <DarkClappingHandsSvg className="4xl:h-[18rem] 4xl:w-[18rem]" />
+          ) : (
+            <ClappingHandsSvg className="4xl:h-[18rem] 4xl:w-[18rem]" />
+          )}
         </motion.div>
         <motion.h2
           // initial={{ opacity: 0 }}
           // animate={{ opacity: 1, transition: { delay: 0.4, duration: 0.5 } }}
           className={twMerge(
             caesar.className,
-            "text-6xl 4xl:text-[7rem] light-gradient mt-6 transition "
+            "text-6xl 4xl:text-[7rem] light-gradient mt-6 transition ",
+            theme === "dark" ? "dark-gradient" : "light-gradient"
           )}
         >
           HI, I'm Yuvraj
@@ -39,7 +51,8 @@ export const HomeSection: React.FC = ({}) => {
           // animate={{ opacity: 1, transition: { delay: 0.6, duration: 0.5 } }}
           className={twMerge(
             lato.className,
-            "text-balance mt-6 text-lg 4xl:text-2xl "
+            "text-balance mt-6 text-lg 4xl:text-2xl ",
+            theme === "dark" ? "text-white" : "text-black"
           )}
         >
           🌎 Nepal, Biratnagar
@@ -49,7 +62,8 @@ export const HomeSection: React.FC = ({}) => {
           // animate={{ opacity: 1, transition: { delay: 0.8, duration: 0.5 } }}
           className={twMerge(
             lato.className,
-            "text-center text-balance mt-4 text-lg 4xl:text-2xl "
+            "text-center text-balance mt-4 text-lg 4xl:text-2xl ",
+            theme === "dark" ? "text-white" : "text-black"
           )}
         >
           I develop web and application solutions for <br /> tech-driven
@@ -73,7 +87,7 @@ export const HomeSection: React.FC = ({}) => {
             }}
             className="relative right-6 cursor-pointer "
           >
-            <FaceBookIcon />
+            {theme === "dark" ? <FaceBookIconDark /> : <FaceBookIcon />}
           </motion.div>
           <motion.div
             initial={{ y: 10, opacity: 0 }}
@@ -84,7 +98,7 @@ export const HomeSection: React.FC = ({}) => {
             }}
             className="relative right-6 cursor-pointer "
           >
-            <InstagramIcon />
+            {theme === "dark" ? <InstaDark /> : <InstagramIcon />}
           </motion.div>
           <motion.div
             initial={{ y: 10, opacity: 0 }}
@@ -95,7 +109,7 @@ export const HomeSection: React.FC = ({}) => {
             }}
             className="relative right-6 cursor-pointer "
           >
-            <GithubIcon />
+            {theme === "dark" ? <GithubDark /> : <GithubIcon />}
           </motion.div>
         </div>
       </div>
